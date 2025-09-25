@@ -1,33 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:shefund/home.dart';
-import 'login.dart'; // import your login page
+import 'package:shefund/budget.dart';
 
 void main() {
-  runApp(const SheFundApp());
+  runApp(const MyApp());
 }
 
-class SheFundApp extends StatelessWidget {
-  const SheFundApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SheFund',
+      title: 'Smart Budget Tracker',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color.fromARGB(255, 231, 164, 217),
-        scaffoldBackgroundColor: Colors.white,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromARGB(255, 173, 59, 145),
-            foregroundColor: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-          ),
-        ),
+        primarySwatch: Colors.pink,
+        useMaterial3: false, // optional: enable Material 3 if you want
       ),
-      home: SheFundHomePage(), // start with the login page
+      home: const BudgetPage(), // 👈 your budget screen
     );
   }
 }
